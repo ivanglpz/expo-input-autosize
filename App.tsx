@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
+  Dimensions,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -18,14 +19,13 @@ export default function App() {
       style={{
         flex: 1,
         display: "flex",
-        width: "100%",
-        height: "100%",
       }}
     >
       <View style={styles.container}>
         <StatusBar
-          translucent={false} // ← Esto hace que no sea translúcida
-          backgroundColor="#000" // Color de fondo de la barra
+          style={"dark"}
+          backgroundColor={"black"}
+          translucent={false}
         />
         <View
           style={{
@@ -33,7 +33,6 @@ export default function App() {
             flexDirection: "column",
             width: "100%",
             height: "100%",
-            padding: 20,
             justifyContent: "flex-end",
           }}
         >
@@ -68,6 +67,7 @@ export default function App() {
                 width: "100%",
                 padding: 8,
                 color: "white",
+                maxHeight: Dimensions.get("window").height - 200,
               }}
             >
               <Text>
@@ -180,5 +180,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     display: "flex",
+    padding: 20,
   },
 });
