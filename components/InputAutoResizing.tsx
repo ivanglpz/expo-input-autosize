@@ -1,10 +1,4 @@
-import {
-  Dimensions,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 const loremText = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque non maxime tempora explicabo quae dolorem modi ratione illum. Est ducimus id quam nisi facere. Sint magnam quod adipisci neque voluptatibus?`;
@@ -41,11 +35,17 @@ export const InputAutoResizing = ({ onChange, value }: InputProps) => {
           }
           onChange(v);
         }}
+        autoCorrect={false}
+        autoComplete="off" // desactiva autocomplete
+        spellCheck={false}
+        keyboardType="default"
+        textContentType="none"
+        importantForAutofill="no"
         style={{
           width: "100%",
           padding: 8,
           color: "black",
-          maxHeight: Dimensions.get("window").height - 200,
+          maxHeight: 220,
         }}
       >
         <Text>

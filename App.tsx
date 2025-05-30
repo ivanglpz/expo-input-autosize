@@ -1,47 +1,52 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
 import { InputAutoResizing } from "./components/InputAutoResizing";
 
 export default function App() {
   const [text, setText] = useState("");
+
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        display: "flex",
-        backgroundColor: "#f4f4f4",
-      }}
-    >
-      <View style={styles.container}>
-        <StatusBar
-          style={"dark"}
-          backgroundColor={"black"}
-          translucent={false}
-        />
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            height: "100%",
-            justifyContent: "flex-end",
-          }}
-        >
-          <InputAutoResizing value={text} onChange={(e) => setText(e)} />
-        </View>
-      </View>
+    <SafeAreaView style={styles.safeArea}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.inner}>
+            <StatusBar
+              style={"dark"}
+              backgroundColor={"black"}
+              translucent={false}
+            />
+            <InputAutoResizing value={text} onChange={(e) => setText(e)} />
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  safeArea: {
     flex: 1,
     backgroundColor: "#f4f4f4",
-    alignItems: "center",
-    justifyContent: "center",
-    display: "flex",
+  },
+  container: {
+    flex: 1,
+  },
+  inner: {
+    flex: 1,
+    justifyContent: "flex-end",
     padding: 20,
   },
 });
