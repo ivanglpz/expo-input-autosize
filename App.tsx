@@ -10,6 +10,7 @@ export default function App() {
       style={{
         flex: 1,
         display: "flex",
+        backgroundColor: "#f4f4f4",
       }}
     >
       <View style={styles.container}>
@@ -37,7 +38,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0b0b0b",
+    backgroundColor: "#f4f4f4",
     alignItems: "center",
     justifyContent: "center",
     display: "flex",
