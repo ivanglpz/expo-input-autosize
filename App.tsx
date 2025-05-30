@@ -47,6 +47,5 @@ const styles = StyleSheet.create({
   inner: {
     flex: 1,
     justifyContent: "flex-end",
-    padding: 20,
   },
 });
