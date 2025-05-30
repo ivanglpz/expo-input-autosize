@@ -23,10 +23,10 @@ This component provides a multiline text input that automatically adjusts its he
 Just copy the entire component code and paste it into your React Native Expo project. Then import and use it like any other component:
 
 ```tsx
-import ExpoInputAutosize from "./ExpoInputAutosize"; // adjust path as needed
+import { InputAutoResizing } from "./InputAutoResizing"; // adjust path as needed
 
 export default function App() {
-  return <ExpoInputAutosize />;
+  return <InputAutoResizing />;
 }
 ```
 
