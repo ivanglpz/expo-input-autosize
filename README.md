@@ -23,11 +23,52 @@ This component provides a multiline text input that automatically adjusts its he
 Just copy the entire component code and paste it into your React Native Expo project. Then import and use it like any other component:
 
 ```tsx
-import { InputAutoResizing } from "./InputAutoResizing"; // adjust path as needed
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import { SafeAreaView, StyleSheet, View } from "react-native";
+import { InputAutoResizing } from "./components/InputAutoResizing";
 
 export default function App() {
-  return <InputAutoResizing />;
+  const [text, setText] = useState("");
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        display: "flex",
+      }}
+    >
+      <View style={styles.container}>
+        <StatusBar
+          style={"dark"}
+          backgroundColor={"black"}
+          translucent={false}
+        />
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            height: "100%",
+            justifyContent: "flex-end",
+          }}
+        >
+          <InputAutoResizing value={text} onChange={(e) => setText(e)} />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#0b0b0b",
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+    padding: 20,
+  },
+});
 ```
 
 ## Requirements
