@@ -96,12 +96,16 @@ export default function App() {
                     backgroundColor: "white",
                     padding: 8,
                     borderRadius: 8,
+                    width: 38,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                   onPress={() => {
                     setText((prev) => `${prev} ${loremText}`);
                   }}
                 >
-                  <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <Svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                     <Path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -122,12 +126,16 @@ export default function App() {
                     backgroundColor: "white",
                     padding: 8,
                     borderRadius: 8,
+                    width: 38,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   }}
                   onPress={() => {
                     setText("");
                   }}
                 >
-                  <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <Svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                     <Path
                       d="M9 1H15V9.5H21V23H3V9.5H9V1ZM11 3V11.5H5V14H19V11.5H13V3H11ZM19 16H5V21H14V18H16V21H19V16Z"
                       fill="black"
@@ -141,9 +149,13 @@ export default function App() {
                   backgroundColor: "white",
                   padding: 8,
                   borderRadius: 8,
+                  width: 38,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <Svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <Svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <Path
                     d="M10.0001 14L21.0001 3M10.0001 14L13.5001 21C13.5439 21.0957 13.6144 21.1769 13.703 21.2338C13.7917 21.2906 13.8948 21.3209 14.0001 21.3209C14.1054 21.3209 14.2085 21.2906 14.2971 21.2338C14.3858 21.1769 14.4562 21.0957 14.5001 21L21.0001 3M10.0001 14L3.00007 10.5C2.90433 10.4561 2.8232 10.3857 2.76632 10.2971C2.70944 10.2084 2.6792 10.1053 2.6792 10C2.6792 9.89468 2.70944 9.79158 2.76632 9.70295C2.8232 9.61431 2.90433 9.54387 3.00007 9.5L21.0001 3"
                     stroke="black"
